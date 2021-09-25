@@ -8,7 +8,7 @@
   },
   "keywords": ["Chatbot","NezukoBot","Nezuko-ChatBot"],
   "author": "Niraj-Dilshan",
-  "license": "ISC",
+  "license": "GPL v3",
   "dependencies": {
     "axios": "^0.21.4",
     "discord.js": "^12.5.0"
