@@ -1,0 +1,16 @@
+{
+  "name": "Nezuko",
+  "version": "1.0.0",
+  "description": "Nezuko ChatBot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["Chatbot","NezukoBot","Nezuko-ChatBot"],
+  "author": "Niraj-Dilshan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "discord.js": "^12.5.0"
+  }
+}
