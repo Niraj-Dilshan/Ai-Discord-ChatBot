@@ -5,7 +5,9 @@ const axios = require('axios');
 const chatbot_name = "Nezuko";
 const chatbot_gender = "Female";
 const client = new Client({disableEveryone: true,});
-client.login("Place Bot Token Here");
+require('dotenv').config()
+const Token = process.env.TOKEN;
+client.login(Token);
 
 client.on("message", async message =>{
    if (message.author.bot) return;  //Check Message Was Send By A Bot

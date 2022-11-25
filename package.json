@@ -6,11 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["Chatbot","NezukoBot","Nezuko-ChatBot"],
+  "keywords": [
+    "Chatbot",
+    "NezukoBot",
+    "Nezuko-ChatBot"
+  ],
   "author": "Niraj-Dilshan",
   "license": "GPL v3",
   "dependencies": {
     "axios": "^0.21.4",
-    "discord.js": "^14.6.0"
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
+  },
+  "engines": {
+    "node": "^16.9.0"
   }
 }
