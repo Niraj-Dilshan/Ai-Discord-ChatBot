@@ -1,6 +1,12 @@
-const { Client, Events, GatewayIntentBits , REST, Routes, Collection } = require('discord.js');
+const { Client, Events, GatewayIntentBits , REST, Routes, Collection, } = require('discord.js');
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({  
+    intents: [
+        GatewayIntentBits.Guilds, 
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+    ] 
+});
 const fs = require('node:fs');
 const path = require('node:path');
 require('dotenv').config()
@@ -70,54 +76,14 @@ for (const file of eventFiles) {
 	}
 }
 
-client.on("message", (message) => {
-    if (message.content === "Server active") {
-        message.channel.send(`I am Active in ${client.guilds.cache.size} Servers`);
-    }
-    if (message.content === "Server size") {
-        message.channel.send(`I am Active in ${client.guilds.cache.size} Servers`);
-    }
-    if (message.content === "Server ammount") {
-        message.channel.send(`I am Active in ${client.guilds.cache.size} Servers`);
-    }
-});
-
  client.login(Token);
 
  //read massage
- client.on('messageCreate', message => {
-	if (message.content === '!ping') {
-		// send back "Pong." to the channel the message was sent in
-		message.channel.send('Pong.');
-	}
-});
-
-client.on(Events.InteractionCreate, interaction => {
-	console.log(interaction);
-});
-
-client.on('message', async message => {
-	if (message.content === "avatar") {
-	  const embed = new RichEmbed()
-	  .setTitle('Avatar!')
-	  .setAuthor("Your Avatar", message.author.avatarURL)
-	  .setImage(message.author.avatarURL)
-	  .setColor('RANDOM')
-	  .setDescription('Avatar URL')
-	 message.reply(embed)
-	}
-  });
-
-client.on("message", async message =>{
-  if (message.author.bot) return;
-  if (message.content.startsWith("bruh"))
-  {
-    message.channel.send(`BIG BRUH MOMENTO`)
-  }
-});
-
 client.on("messageCreate", (message) => {
 	if (message.author.bot) return false; 
-	
-	console.log(`Message from ${message.author.username}: ${message.content}`);
+	console.log(`Message from ${message.author.username}: ${message.content} , AuthorID ${message.author.id} , ChannelID ${message.channel.id}`);
+    //send massage
+    if (message.content === "Server active") {
+        message.channel.send(`I am Active in ${client.guilds.cache.size} Servers`);
+    }
   });
